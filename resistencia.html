@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Calcular valor de una resistencia</title>
+    <style>
+        .titulo{margin: 20px;}
+        .form{margin-left: 20px;}
+        .button{margin-left: 200px;}
+        .borde{border: 1px #000 solid;}
+    </style>
+  </head>
+  <body>
+    <img src="AndesF.png" alt="" style="max-width:100%;width:auto;height:auto;">
+       
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-primary sticky-top navbar-expand-sm">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="navbar-nav mr-auto ml-auto text-center">
+                    <a class="nav-link item" href="index.html">Inicio</a>
+                    <a class="nav-link item" href="administrador.html">Administrador</a>
+                    <a class="nav-link item" href="inventario.html">Inventario</a>
+                    <a class="nav-link active item" href="utilidades.html">Utilidades</a>
+                  </div>
+              </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="subitem col-3">
+                    <div class="container">
+                            <div class="navbar-nav mr-auto">
+                                <a class="nav-link item inv-enlace" href="valor.html"><h3>Ingresar valor de producto</h3></a>
+                                <a class="nav-link item inv-enlace" href="resistencia.html"><h3>Calcular valor de resistencia</h3></a>
+                              </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div> 
+    
+    <h1 class="titulo">Calcular valor de una resistencia</h1>
+    <div class="row form">
+        <div class="col-5">
+            <form action="">
+                <div class="form-group row">
+                    <label for="" class="col-4">1ra banda</label>
+                    <select name="1ra banda" id="primera">
+                        <option value="0">Negro</option>
+                        <option value="1">Marrón</option>
+                        <option value="2">Rojo</option>
+                        <option value="3">Naranja</option>
+                        <option value="4">Amarillo</option>
+                        <option value="5">Verde</option>
+                        <option value="6">Azul</option>
+                        <option value="7">Violeta</option>
+                        <option value="8">Gris</option>
+                        <option value="9">Blanco</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4">2da banda</label>
+                    <select name="2da banda" id="segunda">
+                        <option value="0">Negro</option>
+                        <option value="1">Marrón</option>
+                        <option value="2">Rojo</option>
+                        <option value="3">Naranja</option>
+                        <option value="4">Amarillo</option>
+                        <option value="5">Verde</option>
+                        <option value="6">Azul</option>
+                        <option value="7">Violeta</option>
+                        <option value="8">Gris</option>
+                        <option value="9">Blanco</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4">3ra banda</label>
+                    <select name="3ra banda" id="tercera">
+                        <option value="0">Negro</option>
+                        <option value="1">Marrón</option>
+                        <option value="2">Rojo</option>
+                        <option value="3">Naranja</option>
+                        <option value="4">Amarillo</option>
+                        <option value="5">Verde</option>
+                        <option value="6">Azul</option>
+                        <option value="7">Violeta</option>
+                        <option value="8">Gris</option>
+                        <option value="9">Blanco</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4">Valor de la resistencia(ohm)</label>
+                    <label for="" class="col-4 borde"><span id="valor"></span></label>
+                </div>
+                <div class="form-group button">
+                    <button type="button" class="btn btn-danger" onclick="Resistencia();"><h4>Calcular</h4></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function Resistencia()
+        {
+            var banda1=0;
+            var banda2=0;
+            var banda3=0;
+            var primera=parseInt(document.getElementById("primera").value);
+            var segunda=parseInt(document.getElementById("segunda").value);
+            var tercera=parseInt(document.getElementById("tercera").value);
+
+            switch(primera)
+            {
+                case 0: banda1=0; break;
+                case 1: banda1=1; break;
+                case 2: banda1=2; break;
+                case 3: banda1=3; break;
+                case 4: banda1=4; break;
+                case 5: banda1=5; break;
+                case 6: banda1=6; break;
+                case 7: banda1=7; break;
+                case 8: banda1=8; break;
+                case 9: banda1=9; break;
+            }
+
+            switch(segunda)
+            {
+                case 0: banda2=0; break;
+                case 1: banda2=1; break;
+                case 2: banda2=2; break;
+                case 3: banda2=3; break;
+                case 4: banda2=4; break;
+                case 5: banda2=5; break;
+                case 6: banda2=6; break;
+                case 7: banda2=7; break;
+                case 8: banda2=8; break;
+                case 9: banda2=9; break;
+            }
+
+            switch(tercera)
+            {
+                case 0: banda3=1; break;
+                case 1: banda3=10; break;
+                case 2: banda3=100; break;
+                case 3: banda3=1000; break;
+                case 4: banda3=10000; break;
+                case 5: banda3=100000; break;
+                case 6: banda3=1000000; break;
+                case 7: banda3=10000000; break;
+                case 8: banda3=100000000; break;
+                case 9: banda3=1000000000; break;
+            }
+
+            document.getElementById("valor").innerHTML=(banda1*10+banda2)*banda3;
+        }
+    </script>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+   
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
