@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <title>Ingresar valor a un producto</title>
+    <style>
+        .titulo{margin: 20px;}
+        .form{margin-left: 20px;}
+        .button{margin-left: 300px;}
+        .borde{border: 1px #000 solid;}
+    </style>
+  </head>
+  <body>
+    <img src="AndesF.png" alt="" style="max-width:100%;width:auto;height:auto;">
+       
+    </div>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-primary sticky-top navbar-expand-sm">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="navbar-nav mr-auto ml-auto text-center">
+                    <a class="nav-link item" href="index.html">Inicio</a>
+                    <a class="nav-link item" href="administrador.html">Administrador</a>
+                    <a class="nav-link item" href="inventario.html">Inventario</a>
+                    <a class="nav-link active item" href="utilidades.html">Utilidades</a>
+                  </div>
+              </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark sticky-top">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="subitem col-3">
+                    <div class="container">
+                            <div class="navbar-nav mr-auto">
+                                <a class="nav-link item inv-enlace" href="valor.html"><h3>Ingresar valor de producto</h3></a>
+                                <a class="nav-link item inv-enlace" href="resistencia.html"><h3>Calcular valor de resistencia</h3></a>
+                              </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>   
+    
+    <h1 class="titulo">Ingresar valor a un producto</h1>
+
+    <div class="row form">
+        <div class="col-5">
+            <form action="">
+                <div class="form-group row">
+                    <label for="" class="col-4">Valor de compra</label>
+                    <input type="text" class="form-control col-8" id="compra">
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4">Utilidad o ganancia (%)</label>
+                    <input type="text" class="form-control col-8" id="utilidad">
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4">IVA (%)</label>
+                    <input type="text" class="form-control col-8" id="iva">
+                </div>
+                <div class="form-group button">
+                    <button type="button" class="btn btn-danger" onclick="PrecioVenta();"><h4>Calcular</h4></button>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4">Precio de venta ($)</label>
+                    <label for="" class="col-8 borde"><span id="venta"></span></label>
+                </div>
+                <div class="form-group row">
+                    <label for="" class="col-4">Ganancia ($)</label>
+                    <label for="" class="col-8 borde"><span id="ganancia"></span></label>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function PrecioVenta()
+        {
+            var inciva=0;
+            var incutil=0;
+            var compra=parseInt(document.getElementById("compra").value);
+            var utilidad=parseInt(document.getElementById("utilidad").value);
+            var iva=parseInt(document.getElementById("iva").value);
+            console.log(compra);
+            inciva=compra*iva/100;
+            incutil=compra*utilidad/100;
+            ganancia=inciva+incutil;
+            document.getElementById("venta").innerHTML=compra+incutil+inciva;
+            document.getElementById("ganancia").innerHTML=ganancia;
+        }
+    </script>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+   
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+  </body>
+</html>
